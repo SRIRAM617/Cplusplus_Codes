@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+class Rectangle
+{
+private:
+    int length;
+    int breadth;
+public:
+    int area()
+    {
+        return length*breadth;
+    }
+    int perimeter()
+    {
+
+        return 2*(length+breadth);
+    }
+    void setLength(int l)
+    {
+        if(l>0)
+
+            length=l;
+    }
+    void setBreadth(int b)
+    {
+        if(b>0)
+
+            breadth=b;
+    }
+    int getLength()
+    {
+        return length;
+    }
+     int getBreadth()
+    {
+        return breadth;
+    }
+    Rectangle(int l=0,int b=0){
+        setLength(l);
+        setBreadth(b);
+    }
+    Rectangle(Rectangle &r)
+    {
+        setLength(r.length);
+        setBreadth(r.breadth);
+    }
+
+};
+int main()
+{
+    Rectangle r1;
+    r1.setLength(5);
+    r1.setBreadth(10);
+    Rectangle r2(2,3);
+    Rectangle r3(r2);
+    cout<<"Without constructor(default) area "<<r1.area()<<endl;
+    cout<<"Without constructor perimeter(default) "<<r1.perimeter()<<endl;
+
+    cout<<"With constructor(parameterised) area "<<r2.area()<<endl;
+    cout<<"With constructor(parameterised) perimeter "<<r2.perimeter()<<endl;
+
+     cout<<"With constructor(copy) area "<<r3.area()<<endl;
+    cout<<"With constructor(copy) perimeter "<<r3.perimeter()<<endl;
+
+}
