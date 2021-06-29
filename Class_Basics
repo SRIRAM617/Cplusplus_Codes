@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class Rectangle
+{
+private:
+    int length;
+    int breadth;
+public:
+    int area()
+    {
+        return length*breadth;
+    }
+    int perimeter()
+    {
+
+        return 2*(length+breadth);
+    }
+    void setLength(int lv)
+    {
+        if(lv>0)
+
+            length=lv;
+    }
+    void setBreadth(int bv)
+    {
+        if(bv>0)
+
+            breadth=bv;
+    }
+    int getLength()
+    {
+        return length;
+    }
+     int getBreadth()
+    {
+        return breadth;
+    }
+    Rectangle(int lc=0,int bc=0){
+        setLength(lc);
+        setBreadth(bc);
+    }
+
+};
+int main()
+{
+    Rectangle r1;
+    r1.setLength(5);
+    r1.setBreadth(10);
+    Rectangle r2(2,3);
+    cout<<"Without con area "<<r1.area()<<endl;
+    cout<<"Without con perimeter "<<r1.perimeter()<<endl;
+    cout<<"With con area "<<r2.area()<<endl;
+    cout<<"With con perimeter "<<r2.perimeter()<<endl;
+
+
+}
