@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+  int m=2;
+  int n=9;
+  int mp=m;
+  for(int i=1;i<n;i++)
+  {
+      m=m*mp;
+  }
+  cout<<m;
+}
