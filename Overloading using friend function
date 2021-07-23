@@ -1,0 +1,63 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+class Complex
+{
+    private:
+    int i;
+    int r;
+    public:
+    void setImg(int i)
+    {
+        this->i=i;
+    }
+    void setRel(int r)
+    {
+        this->r=r;
+    }
+    Complex(int r=0,int i=0)
+    {
+        setRel(r);
+        setImg(i);
+    }
+    
+    int getRel()
+    {
+       return r;
+    }
+    int getImg()
+    {
+       return i;
+    }
+    void display()
+    {
+       cout<<r<<"+i"<<i<<endl; 
+    }
+   friend Complex operator+(Complex c1,Complex c2);
+};
+ Complex operator+(Complex c1,Complex c2)
+    {
+        Complex temp;
+        temp.r=c1.r+c2.r;
+        temp.i=c1.i+c2.i;
+        return temp;
+    }
+
+int main()
+{
+    
+  Complex c1(4,5),c2(5,5),result;
+  result=c1+c2;
+  result.display();
+  
+  
+    return 0;
+}
