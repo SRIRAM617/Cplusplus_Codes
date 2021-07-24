@@ -1,0 +1,36 @@
+
+
+#include <iostream>
+
+using namespace std;
+class Base
+{
+    public:
+  Base()
+  {
+      cout<<"NON Param of base"<<endl;
+  }
+  Base(int x)
+  {
+      cout<<"Param of base "<<x<<endl;
+  }
+};
+class Derived:public Base
+{
+    public:
+  Derived()
+  {
+      cout<<"NON Param of derived"<<endl;
+  }
+  Derived(int x,int y):Base(x)
+  {
+      cout<<"Param of derived "<<y<<endl;
+  }
+};
+
+int main()
+{
+    Derived d1(5,10);
+
+    return 0;
+}
