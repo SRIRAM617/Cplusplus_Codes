@@ -1,0 +1,39 @@
+
+
+#include <iostream>
+
+using namespace std;
+class Base
+{
+    public:
+    virtual void fun()=0;//pure virtual function
+    // or we can define it also.
+    /*
+     virtual void fun()
+    {
+        cout<<"Base class called"<<endl;
+    }
+    */
+    
+    
+};
+class Derived:public Base
+{
+    public:
+    void fun()
+    {
+        cout<<"Derived class called"<<endl;
+    }
+    
+};
+
+int main()
+{
+   Base *p;
+   // or we can assign like this p=new Derived();
+   Derived d;
+   p=&d;
+   p->fun();
+
+    return 0;
+}
