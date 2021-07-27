@@ -1,0 +1,33 @@
+
+#include<iostream>
+using namespace std;
+#include<fstream>
+class student
+{
+public:
+    string name;
+    int roll;
+    string branch;
+    friend ofstream& operator<<(ofstream &ofs,student &s);
+
+};
+ofstream& operator<<(ofstream &ofs,student &s)
+{
+    ofs<<s.name<<endl;
+    ofs<<s.roll<<endl;
+    ofs<<s.branch<<endl;
+    return ofs;
+}
+int main()
+{
+    student s1,s2;
+    s2.name="Ram";s2.branch="CSIT";s2.roll=22;
+    s1.name="Sriram";s1.roll=18;s1.branch="CS";
+    ofstream ofs;
+    ofs.open("Student.txt",ios::trunc);
+     ofs<<s1;
+     ofs<<s2;
+    ofs.close();
+
+
+}
